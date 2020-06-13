@@ -2,6 +2,9 @@ function Shop () {
 }
 
 Shop.prototype.checkout = function (code) {
+  if (code != code.toUpperCase()) {
+    return -1
+  }
   let codeArray = code.split('')
   let total = 0
   let numAs = 0

@@ -54,4 +54,10 @@ describe('Shop', function() {
       expect(shop.checkout('ABCD')).toEqual(115)
     })
   })
+
+  describe('Incorrect inputs', function () {
+    it('aBc returns -1', function () {
+      expect(shop.checkout('aBc')).toEqual(-1)
+    })
+  })
 })
