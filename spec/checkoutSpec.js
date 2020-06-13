@@ -10,8 +10,12 @@ describe('Shop', function() {
       expect(shop.checkout('A')).toEqual(50)
     })
 
-    it('two As return 100', function() {
+    it('two As return 100', function () {
       expect(shop.checkout('AA')).toEqual(100)
+    })
+
+    it('three As return 130', function () {
+      expect(shop.checkout('AAA')).toEqual(130)
     })
   })
 

@@ -4,9 +4,10 @@ function Shop () {
 Shop.prototype.checkout = function (code) {
   let codeArray = code.split('')
   let total = 0
+  let numAs = 0
   for (let i = 0; i < codeArray.length; i++) {
     if (code[i] === 'A') {
-      total += 50
+      numAs += 1
     }
     if (code === 'B') {
       total += 30
@@ -18,5 +19,12 @@ Shop.prototype.checkout = function (code) {
       total += 15
     }
   }
+  if (numAs % 3 === 0) {
+    total += (130 * (numAs / 3))
+  } else { 
+    total += (50 * numAs)
+  }
   return total
 }
+
+
