@@ -48,4 +48,10 @@ describe('Shop', function() {
       expect(shop.checkout('D')).toEqual(15)
     })
   })
+
+  describe('String with different letters', function () {
+    it('ABCD return 115', function () {
+      expect(shop.checkout('ABCD')).toEqual(115)
+    })
+  })
 })

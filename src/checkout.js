@@ -13,10 +13,10 @@ Shop.prototype.checkout = function (code) {
     if (code[i] === 'B') {
       numBs += 1
     }
-    if (code === 'C') {
+    if (code[i] === 'C') {
       total += 20
     }
-    if (code === 'D') {
+    if (code[i] === 'D') {
       total += 15
     }
   }
@@ -42,12 +42,10 @@ Shop.prototype.totalAs = function (numAs) {
 Shop.prototype.totalBs = function (numBs) {
   let totalBs = 0
   if (numBs > 2 && numBs % 2 != 0) {
-    // let remainder = 1
     totalBs += (45 * ((numBs - 1) / 2)) + 30
   } else if (numBs % 2 === 0) {
     totalBs += (45 * (numBs / 2))
-  }
-  else { 
+  } else { 
     totalBs += 30
   }
   return totalBs
