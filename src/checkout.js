@@ -2,7 +2,7 @@ const A_PRICE = 50
 const A_OFFER_PRICE = 130
 const A_OFFER_NUM = 3
 // A & B Offer number indicates the number of A or B
-// someone buts before it triggers an offer
+// someone buys before it triggers an offer
 const B_PRICE = 30
 const B_OFFER_PRICE = 45
 const B_OFFER_NUM = 2
