@@ -6,8 +6,14 @@ describe('Shop', function() {
   })
 
   describe('String with A', function () {
-    it('Returns 50', function() {
+    it('returns 50', function() {
       expect(shop.checkout('A')).toEqual(50)
+    })
+  })
+
+  describe('String with B', function () {
+    it('returns 30', function () {
+      expect(shop.checkout('B')).toEqual(30)
     })
   })
 })
