@@ -10,7 +10,7 @@ function Shop () {
 }
 
 Shop.prototype.checkout = function (code) {
-  if (this.isStringValid(code) === false) {
+  if (this._isStringValid(code) === false) {
     return INCORRECT_INPUT
   }
   let codeArray = code.split('')
@@ -32,12 +32,12 @@ Shop.prototype.checkout = function (code) {
       total += D_PRICE
     }
   }
-  total += this.totalAs(numAs)
-  total += this.totalBs(numBs)
+  total += this._totalAs(numAs)
+  total += this._totalBs(numBs)
   return total
 }
 
-Shop.prototype.totalAs = function (numAs) {
+Shop.prototype._totalAs = function (numAs) {
   let totalAs = 0
   if (numAs % 3 === 0) {
       totalAs += (A_OFFER_PRICE  * (numAs / 3))
@@ -48,7 +48,7 @@ Shop.prototype.totalAs = function (numAs) {
   return totalAs
 }
 
-Shop.prototype.totalBs = function (numBs) {
+Shop.prototype._totalBs = function (numBs) {
   let totalBs = 0
   if (numBs % 2 === 0) {
     totalBs += (B_OFFER_PRICE * (numBs / 2))
@@ -58,6 +58,6 @@ Shop.prototype.totalBs = function (numBs) {
   return totalBs
 }
 
-Shop.prototype.isStringValid = function (code) {
+Shop.prototype._isStringValid = function (code) {
   return (typeof code != 'string' || code != code.toUpperCase() ? false : true) 
 }
