@@ -21,18 +21,7 @@ Shop.prototype.checkout = function (code) {
     }
   }
   total += this.totalAs(numAs)
-
-  if (numBs > 2 && numBs % 2 != 0) {
-    let remainder = (numBs % 2)
-    total += (45 * ((numBs - remainder) / 2)) + (remainder * 30)
-  } else if (numBs % 2 === 0) {
-    total += (45 * (numBs / 2))
-    console.log(numBs)
-  }
-  else { 
-    total += 30
-    console.log(total)
-  }
+  total += this.totalBs(numBs)
   return total
 }
 
@@ -48,5 +37,19 @@ Shop.prototype.totalAs = function (numAs) {
     totalAs += (50 * numAs)
   }
   return totalAs
+}
+
+Shop.prototype.totalBs = function (numBs) {
+  let totalBs = 0
+  if (numBs > 2 && numBs % 2 != 0) {
+    let remainder = 1
+    totalBs += (45 * ((numBs - remainder) / 2)) + (remainder * 30)
+  } else if (numBs % 2 === 0) {
+    totalBs += (45 * (numBs / 2))
+  }
+  else { 
+    totalBs += 30
+  }
+  return totalBs
 }
 
