@@ -2,19 +2,20 @@ function Shop () {
 }
 
 Shop.prototype.checkout = function (code) {
-  if (this.validateString(code) === false) {
+  if (this.isStringValid(code) === false) {
     return -1
   }
   let codeArray = code.split('')
+
   let total = 0
   let numAs = 0
   let numBs = 0
   for (let i = 0; i < codeArray.length; i++) {
     if (code[i] === 'A') {
-      numAs += 1
+      numAs ++
     }
     if (code[i] === 'B') {
-      numBs += 1
+      numBs ++
     }
     if (code[i] === 'C') {
       total += 20
@@ -54,7 +55,7 @@ Shop.prototype.totalBs = function (numBs) {
   return totalBs
 }
 
-Shop.prototype.validateString = function (code) {
+Shop.prototype.isStringValid = function (code) {
   if (typeof code != 'string') {
       return false
     }
