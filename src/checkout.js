@@ -42,8 +42,8 @@ Shop.prototype.totalAs = function (numAs) {
 Shop.prototype.totalBs = function (numBs) {
   let totalBs = 0
   if (numBs > 2 && numBs % 2 != 0) {
-    let remainder = 1
-    totalBs += (45 * ((numBs - remainder) / 2)) + (remainder * 30)
+    // let remainder = 1
+    totalBs += (45 * ((numBs - 1) / 2)) + 30
   } else if (numBs % 2 === 0) {
     totalBs += (45 * (numBs / 2))
   }

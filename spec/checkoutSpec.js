@@ -31,6 +31,10 @@ describe('Shop', function() {
     it('two Bs return 45', function () {
       expect(shop.checkout('BB')).toEqual(45)
     })
+
+    it('three Bs return 75', function () {
+      expect(shop.checkout('BBB')).toEqual(75)
+    })
   })
 
   describe('String with Cs', function () {
