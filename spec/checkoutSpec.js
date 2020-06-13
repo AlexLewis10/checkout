@@ -16,4 +16,10 @@ describe('Shop', function() {
       expect(shop.checkout('B')).toEqual(30)
     })
   })
+
+  describe('String with C', function () {
+    it('returns 20', function () {
+      expect(shop.checkout('C')).toEqual(20)
+    })
+  })
 })

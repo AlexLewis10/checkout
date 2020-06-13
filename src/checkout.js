@@ -8,5 +8,8 @@ Shop.prototype.checkout = function (code) {
   if (code === 'B') {
     return 30
   }
+  if (code === 'C') {
+    return 20
+  }
   
 }
