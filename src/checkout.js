@@ -2,10 +2,7 @@ function Shop () {
 }
 
 Shop.prototype.checkout = function (code) {
-  if (typeof code != 'string') {
-    return -1
-  }
-  if (code != code.toUpperCase()) {
+  if (this.validateString(code) === false) {
     return -1
   }
   let codeArray = code.split('')
@@ -57,3 +54,12 @@ Shop.prototype.totalBs = function (numBs) {
   return totalBs
 }
 
+Shop.prototype.validateString = function (code) {
+  if (typeof code != 'string') {
+      return false
+    }
+  if (code != code.toUpperCase()) {
+      return false
+  }
+  return true
+}
