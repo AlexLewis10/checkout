@@ -37,26 +37,26 @@ Shop.prototype.checkout = function (code) {
 
 Shop.prototype.totalAs = function (numAs) {
   let totalAs = 0
-  if (numAs > 3 && numAs % 3 != 0) {
+  if (numAs % 3 === 0) {
+      totalAs += (A_OFFER_PRICE  * (numAs / 3))
+    } else {
     let remainder = (numAs % 3)
     totalAs += (A_OFFER_PRICE  * ((numAs - remainder) / 3)) + (remainder * A_PRICE)
-  } else if (numAs % 3 === 0) {
-    totalAs += (A_OFFER_PRICE  * (numAs / 3))
-  }
-  else { 
-    totalAs += (A_PRICE * numAs)
-  }
+    }
   return totalAs
 }
 
+
+
 Shop.prototype.totalBs = function (numBs) {
   let totalBs = 0
-  if (numBs > 2 && numBs % 2 != 0) {
-    totalBs += (B_OFFER_PRICE * ((numBs - 1) / 2)) + B_PRICE
-  } else if (numBs % 2 === 0) {
+  // if (numBs > 2 && numBs % 2 != 0) {
+  //   totalBs += (B_OFFER_PRICE * ((numBs - 1) / 2)) + B_PRICE} 
+    if (numBs % 2 === 0) {
     totalBs += (B_OFFER_PRICE * (numBs / 2))
   } else { 
-    totalBs += B_PRICE
+    // totalBs += B_PRICE
+    totalBs += (B_OFFER_PRICE * ((numBs - 1) / 2)) + B_PRICE
   }
   return totalBs
 }
