@@ -1,4 +1,11 @@
-Requirements
+# Checkout
+
+This is a simple project to practice TDD by making a simple shop checkout that can recieve a string representing the purchased items and output the totalPrice of those items.
+
+I took the requirements and acceptance criteria below and converted them into an input/output table. This allowed me to iterate over the problem by letting my tests take the lead my code, therefore taking small steps each time until I came to a solution.
+
+
+## Requirements
 In a normal supermarket, things are identified using Stock Keeping Units, or SKUs. In our store, we'll use individual letters of the alphabet (A, B, C, and so on). Our goods are priced individually. In addition, some items are multi-priced: buy n of them, and they'll cost you y pounds.
 
 For example, item A might cost 50 pounds individually, but this week we have a special offer:
@@ -37,7 +44,6 @@ shop.checkout('AAAAAA') # => 260
 ```
 
 
-
 | INPUT | OUTPUT | Notes|
 |-------|--------|------|
 |A      |   50   |
@@ -55,7 +61,3 @@ shop.checkout('AAAAAA') # => 260
 |-B8x   |   -1   | This test was passed by the previous input criteria
 |18     |   -1   | Note this case is inputted as a number not an integer
 
-Split String to an Array
-Count number of each in the array.
-Add totalAs += 1
-Then add the number of each to the total
