@@ -47,7 +47,7 @@ shop.checkout('AAAAAA') # => 260
 |BBB    |   75   |
 |ABCD   |   115  |
 |aBc    |   -1   |
-|-B8x   |   -1   |
+|-B8x   |   -1   | This test was passed by the previous input criteria
 |18     |   -1   | Note this case is inputted as a number not an integer
 
 Split String to an Array

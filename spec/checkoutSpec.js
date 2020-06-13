@@ -59,5 +59,9 @@ describe('Shop', function() {
     it('aBc returns -1', function () {
       expect(shop.checkout('aBc')).toEqual(-1)
     })
+
+    it('the integer 18 returns -1', function () {
+      expect(shop.checkout(18)).toEqual(-1)
+    })
   })
 })

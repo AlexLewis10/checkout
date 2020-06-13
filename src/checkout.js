@@ -2,6 +2,9 @@ function Shop () {
 }
 
 Shop.prototype.checkout = function (code) {
+  if (typeof code != 'string') {
+    return -1
+  }
   if (code != code.toUpperCase()) {
     return -1
   }
