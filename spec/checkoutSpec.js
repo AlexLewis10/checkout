@@ -5,26 +5,30 @@ describe('Shop', function() {
     shop = new Shop()
   })
 
-  describe('String with A', function () {
-    it('returns 50', function() {
+  describe('String with As', function () {
+    it('one A returns 50', function() {
       expect(shop.checkout('A')).toEqual(50)
+    })
+
+    it('two As return 100', function() {
+      expect(shop.checkout('AA')).toEqual(100)
     })
   })
 
-  describe('String with B', function () {
-    it('returns 30', function () {
+  describe('String with Bs', function () {
+    it('one B returns 30', function () {
       expect(shop.checkout('B')).toEqual(30)
     })
   })
 
-  describe('String with C', function () {
-    it('returns 20', function () {
+  describe('String with Cs', function () {
+    it('one C returns 20', function () {
       expect(shop.checkout('C')).toEqual(20)
     })
   })
 
-  describe('String with D', function () {
-    it('returns 15', function () {
+  describe('String with Ds', function () {
+    it('one D returns 15', function () {
       expect(shop.checkout('D')).toEqual(15)
     })
   })
