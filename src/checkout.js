@@ -19,17 +19,21 @@ Shop.prototype.checkout = function (code) {
       total += 15
     }
   }
-  if (numAs > 3 && numAs % 3 != 0) {
-    let remainder = (numAs % 3)
-    total += (remainder * 50)
-    total += (130 * ((numAs - remainder) / 3) )
-  } else if (numAs % 3 === 0) {
-    total += (130 * (numAs / 3))
-  }
-  else { 
-    total += (50 * numAs)
-  }
+  total += this.totalAs(numAs)
   return total
 }
 
+Shop.prototype.totalAs = function (numAs) {
+  let totalAs = 0
+  if (numAs > 3 && numAs % 3 != 0) {
+    let remainder = (numAs % 3)
+    totalAs += (130 * ((numAs - remainder) / 3)) + (remainder * 50)
+  } else if (numAs % 3 === 0) {
+    totalAs += (130 * (numAs / 3))
+  }
+  else { 
+    totalAs += (50 * numAs)
+  }
+  return totalAs
+}
 
