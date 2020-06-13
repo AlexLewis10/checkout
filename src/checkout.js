@@ -11,5 +11,8 @@ Shop.prototype.checkout = function (code) {
   if (code === 'C') {
     return 20
   }
+  if (code === 'D') {
+    return 15
+  }
   
 }

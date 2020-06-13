@@ -22,4 +22,10 @@ describe('Shop', function() {
       expect(shop.checkout('C')).toEqual(20)
     })
   })
+
+  describe('String with D', function () {
+    it('returns 15', function () {
+      expect(shop.checkout('D')).toEqual(15)
+    })
+  })
 })
