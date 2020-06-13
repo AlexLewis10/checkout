@@ -49,3 +49,8 @@ shop.checkout('AAAAAA') # => 260
 |aBc    |   -1   |
 |-B8x   |   -1   |
 |18     |   -1   | Note this case is inputted as a number not an integer
+
+Split String to an Array
+Count number of each in the array.
+Add totalAs += 1
+Then add the number of each to the total

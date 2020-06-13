@@ -17,6 +17,10 @@ describe('Shop', function() {
     it('three As return 130', function () {
       expect(shop.checkout('AAA')).toEqual(130)
     })
+
+    it('four As return 180', function () {
+      expect(shop.checkout('AAAA')).toEqual(180)
+    })
   })
 
   describe('String with Bs', function () {

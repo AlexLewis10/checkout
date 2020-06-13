@@ -19,9 +19,14 @@ Shop.prototype.checkout = function (code) {
       total += 15
     }
   }
-  if (numAs % 3 === 0) {
+  if (numAs > 3 && numAs % 3 != 0) {
+    let remainder = (numAs % 3)
+    total += (remainder * 50)
+    total += (130 * ((numAs - remainder) / 3) )
+  } else if (numAs % 3 === 0) {
     total += (130 * (numAs / 3))
-  } else { 
+  }
+  else { 
     total += (50 * numAs)
   }
   return total
