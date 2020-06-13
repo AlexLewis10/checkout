@@ -1,5 +1,11 @@
 function Shop () {
 }
+const A_PRICE = 50
+const A_OFFER_PRICE = 130
+const B_PRICE = 30
+const B_OFFER_PRICE = 45
+const C_PRICE = 20
+const D_PRICE = 15
 
 Shop.prototype.checkout = function (code) {
   if (this.isStringValid(code) === false) {
@@ -18,10 +24,10 @@ Shop.prototype.checkout = function (code) {
       numBs ++
     }
     if (code[i] === 'C') {
-      total += 20
+      total += C_PRICE
     }
     if (code[i] === 'D') {
-      total += 15
+      total += D_PRICE
     }
   }
   total += this.totalAs(numAs)
@@ -33,12 +39,12 @@ Shop.prototype.totalAs = function (numAs) {
   let totalAs = 0
   if (numAs > 3 && numAs % 3 != 0) {
     let remainder = (numAs % 3)
-    totalAs += (130 * ((numAs - remainder) / 3)) + (remainder * 50)
+    totalAs += (A_OFFER_PRICE  * ((numAs - remainder) / 3)) + (remainder * A_PRICE)
   } else if (numAs % 3 === 0) {
-    totalAs += (130 * (numAs / 3))
+    totalAs += (A_OFFER_PRICE  * (numAs / 3))
   }
   else { 
-    totalAs += (50 * numAs)
+    totalAs += (A_PRICE * numAs)
   }
   return totalAs
 }
@@ -46,11 +52,11 @@ Shop.prototype.totalAs = function (numAs) {
 Shop.prototype.totalBs = function (numBs) {
   let totalBs = 0
   if (numBs > 2 && numBs % 2 != 0) {
-    totalBs += (45 * ((numBs - 1) / 2)) + 30
+    totalBs += (B_OFFER_PRICE * ((numBs - 1) / 2)) + B_PRICE
   } else if (numBs % 2 === 0) {
-    totalBs += (45 * (numBs / 2))
+    totalBs += (B_OFFER_PRICE * (numBs / 2))
   } else { 
-    totalBs += 30
+    totalBs += B_PRICE
   }
   return totalBs
 }
